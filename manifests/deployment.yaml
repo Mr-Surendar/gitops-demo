@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: kubecalc-deployment
+  name: gitops-demo-deployment
 
 spec:
   replicas: 2
 
   selector:
     matchLabels:
-      app: kubecalc
+      app: gitops-demo
 
   template:
     metadata:
       labels:
-        app: kubecalc
+        app: gitops-demo
     
     spec:
       containers:
-      - name: kubecalc-container
-        image: mrsurendar/kubecalc:v1
+      - name: gitops-demo-container
+        image: mrsurendar/gitops-demo:v1
         ports:
         - containerPort: 80
